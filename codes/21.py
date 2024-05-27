@@ -1,12 +1,6 @@
 # https://leetcode.com/problems/merge-two-sorted-lists/description/
 
 
-# Definition for singly-linked list.
-class ListNode:
-  def __init__(self, val=0, next=None):
-    self.val = val
-    self.next = next
-
 def solution(A, B):
   n = len(A)
   m = len(B)
@@ -47,6 +41,8 @@ def solutionB():
     current.next = list2
   
   return dummy.next
+
+
 if __name__ == "__main__":
   test_cases = [
     [[1, 5, 9], [2, 6, 10], [1, 1, 2, 3, 4, 4]],
