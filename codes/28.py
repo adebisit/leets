@@ -1,4 +1,5 @@
 # https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
+
 def setStr(haystack: str, needle: str):
     n = len(haystack)
     m = len(needle)
@@ -18,7 +19,6 @@ def setStr(haystack: str, needle: str):
         if match:
             return i
     return -1
-    
 
 if __name__ == "__main__":
     print(setStr("sadbutsad", "sad"))
