@@ -1,17 +1,14 @@
 from typing import List
 
 def plusOne(self, digits: List[int]) -> List[int]:
-        n = len(digits)
-        quotient = 0
-        
-        for i in range(n - 1, 0, -1):
-            print(digits)
-            digits[i] = digits[i] + 1 + quotient
-            if (digits[i] > 9):
-                digits[i] = 0
-                quotient = 1
-        if quotient != 0:
-            return [0] + digits
-        else:
+    n = len(digits)
+    last_sum = 10
+    i = n - 1
+    while i >= 0:
+        last_sum = digits[i] + (last_sum // 10)
+        digits[i] = last_sum % 10
+        i -= 1
+        if last_sum < 10:
             return digits
-        
+    if last_sum == 10:
+        return [1] + digits
