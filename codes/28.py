@@ -1,5 +1,8 @@
 # https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
+import time
+from utils.timehandler import *
 
+@timeHandlerWrapper
 def setStr(haystack: str, needle: str):
     n = len(haystack)
     m = len(needle)
