@@ -2,7 +2,7 @@ from typing import Optional
 from dsTypes.linkedList import ListNode
 
 def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
-    dummy = ListNode()
+    dummy = ListNode(None)
     current = dummy
 
     if head.next is None:
