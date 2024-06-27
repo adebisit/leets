@@ -11,22 +11,32 @@ def setZeroes(matrix: List[List[int]]) -> None:
     m = len(matrix)
     n = len(matrix[0])
 
+    if n == 1 or m == 1:
+        setAllZeros = False
+        for i in range(m):
+            for j in range(n):
+                if matrix[i][j] == 0:
+                    setAllZeros = True
+        if setAllZeros:
+            for i in range(m):
+                for j in range(n):
+                    matrix[i][j] = 0
+
+
     print("Before Starting")
     printMatrix(matrix)
     input("Press Enter to continue:\n")
 
-    first_column_zero = False
+    first_column_zero = matrix[0][0] == 0
+    first_row_zero = matrix[0][0] == 0
     for i in range(m):
         if matrix[i][0] == 0:
             first_column_zero = True
-            if i == 0:
-                first_row_zero = 0
         for j in range(1, n):
             if matrix[i][j] == 0:
                 matrix[i][0] = 0
                 break
-    
-    first_row_zero = False
+
     print("Left Row Inverted")
     printMatrix(matrix)
     input("Press Enter to continue:\n")
@@ -68,18 +78,18 @@ test1 = [
     [1, 0, 1],
     [1, 1, 1]
 ]
-# setZeroes(test1)
-# printMatrix(test1)
-# input(".......\n")
+setZeroes(test1)
+printMatrix(test1)
+input(".......\n")
 
 test2 = [
     [0, 1, 2, 0],
     [3, 4, 5, 2],
     [1, 3, 1, 5]
 ]
-# setZeroes(test2)
-# printMatrix(test2)
-# input(".......\n")
+setZeroes(test2)
+printMatrix(test2)
+input(".......\n")
 
 test3 = [
     [1, 2, 3, 4, 0, 5, 6],
@@ -90,9 +100,9 @@ test3 = [
     [0, 0, -1, 2, 3, 4, 0],
     [1, 2, 3, 4, 5, 6, 7]
 ]
-# setZeroes(test3)
-# printMatrix(test3)
-# input(".......")
+setZeroes(test3)
+printMatrix(test3)
+input(".......")
 
 test4 = [
     [0,2,5,2,2],
